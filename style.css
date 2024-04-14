@@ -1,0 +1,189 @@
+*{
+    margin:0;
+    padding:0;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+transition:all 0.2s linear;
+}
+body{
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(bg/hydrobg.jpg);
+    background-size: 100vw;
+   
+    
+    
+}
+nav{
+    height:15vh;
+    width: 98%;
+    margin:auto;
+    margin-top: 12px;
+    border-radius: 22px;
+    background-color: rgb(27, 27, 27);
+}
+.element{
+    height:10vh;
+    width: 36%;
+    background-color: rgb(26, 26, 26);
+    margin:auto;
+    margin-top: 10px;
+    border-radius: 200px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    top:10vh;
+    border: 2px solid gray;
+    z-index: 20;
+}
+.element .elem{
+    height:80%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    transition: all 0.5s;
+
+}
+.element .elem:hover{
+    border: 1px solid white;
+    transform:scale(1.1);
+    cursor: pointer;
+    
+    
+}
+.elem{
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.anemo{
+    background-image: url("elements/anemo.png");
+    
+}
+.dendro{
+    background-image: url("elements/dendro.png");
+    
+}
+.cryo{
+    background-image:url("elements/cryo.png");
+   
+}
+.hydro{
+    background-image: url(elements/hydro.png);
+}
+.electro{
+    background-image: url(elements/electro.png);
+}
+.pyro{
+    background-image: url(elements/pyro.png);
+}
+.geo{
+    background-image: url(elements/geo.png);
+}
+.cardshowcase{
+    height:auto;
+    width: 90vw;
+    position: absolute;
+    background-color: rgba(32, 32, 32, 0);
+    top:25vh;
+    margin:auto;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    border-radius: 12px;
+    left:50%;
+    transform: translateX(-50%);
+}
+.card{
+    transition: 0.2s;
+    height:400px;
+    width: 270px;
+    padding-top: 50px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:end;
+    overflow: hidden;
+    margin:20px;
+    border-radius: 12px;
+    position: relative;
+   
+
+
+}
+.card:hover{
+    cursor: pointer;
+}
+
+.bottom{
+    height:30px;
+    width: 170px;
+    background-color: rgb(29, 29, 29);
+    border: 2px solid gray;
+    background-image: url("logos/5stars.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom:4px;
+    left:50%;
+    transform: translateX(-50%);
+    border-radius: 50vw;
+    
+
+}
+.card .bg{
+    height:100%;
+    width: 100%;
+    background-image: url(bg/background.jpeg);
+    background-size: 400px;
+    background-position:30%;
+    border-radius: 30px 30px 12px 12px;
+       
+}
+.cardshowcase .card img{
+    height:800px;
+    width: 100%;
+    filter:drop-shadow(6px 6px 4px black);
+    transition: all 0.3s;
+    object-fit: cover;  
+    object-position: 20% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+
+    
+ 
+}
+
+.bg .text{
+    text-transform: capitalize;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    font-size: 42px;
+    font-weight: 900;
+    position: absolute;
+    z-index: 30;
+    bottom:35px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.charinfo{
+position:absolute;
+height: 170vh;
+width:100vw;
+z-index: 2;
+top:25vh;
+left:50%;
+transform: translateX(-50%);
+display:block;
+background-color: rgb(25, 25, 25);
+display:none;
+justify-content: center;
+}
+
+
