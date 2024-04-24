@@ -1,5 +1,5 @@
-
-
+let charinfocont=document.querySelector(".charinfocont")
+let mainbg=document.querySelector(".mainbg")
 let cards=document.querySelectorAll(".card")
 function Hover(){
     cards=document.querySelectorAll(".card")
@@ -23,75 +23,82 @@ function Hover(){
                         
                     })
                     cardo.addEventListener("click",function(){
-                        cardshow.innerHTML=` <div class="charimgi">
-                        <img src="char/noob2.png" alt="">`
-                    })
-                   
-                  })}
+                        let charr=cardo.classList[1]
+                        console.log(charr)
+                        cardshow.style.display="none"
+                        charinfocont.style.display="block"
+                        charinfocont.innerHTML=`<div class="photo">
+                        <img class="mainimg" src="char/${charr}/main.png" alt="">
+                        </div>`
+                    }
+                )
+                })}   
+                  
+
+let allcharacters = {
+ bennet: ["bennet", "sword", "star4", "modstate"],
+ xiangling: ["xiangling", "pyro", "polearm", "star4", "liyue"],
+raiden:["raiden shogun", "electro", "polearm", "5star", "inazuma"],
+ ganyu: ["ganyu", "cryo", "bow", "star5", "liyue"],
+ zhongli:["zhongli","geo","polearn","star4" ,"liyue"],
+ furina:["furina","hydro","polearn","star4" ,"liyue"],
+ ayato:["ayato","hydro","polearn","star4" ,"liyue"],
+ tighnari:["tighnari","dendro","polearn","star4" ,"liyue"],
+ shenhe:["shenhe","cryo","polearn","star4" ,"liyue"],
+ venti:["venti","anemo","polearn","star4" ,"liyue"],
+ arataki:["arataki itto","geo","polearn","star4" ,"liyue"],
+ neuvillette:["neuvillette","hydro","polearn","star4" ,"liyue"],
+ yalen:["yalen","hydro","polearn","star4" ,"liyue"],
+ kokomi:["kokomi","hydro","polearn","star4" ,"liyue"],
+ childe:["childe","hydro","polearn","star4" ,"liyue"],
+ alhaitam:["alhaitam","dendro","polearn","star4" ,"liyue"],
+ kazuha:["kazuha","anemo","polearn","star4" ,"liyue"],
+ barbara:["barbara","hydro","polearn","star4" ,"liyue"],
+ mona:["mona","hydro","polearn","star4" ,"liyue"],
+ nilou:["nilou","hydro","polearn","star4" ,"liyue"],
+ candance:["candance","hydro","polearn","star4" ,"liyue"],
+ xingqui:["xingqui","hydro","polearn","star4" ,"liyue"],
+
+
+                };
+                
+let elements = ["pyro", "hydro", "anemo", "electro","dendro", "cryo",  "geo"];
+                
+ let cardshow = document.querySelector(".cardshowcase");
+ let elementsbtn = document.querySelectorAll(".elem");
+                
+ elementsbtn.forEach(function(elem) {
+     elem.addEventListener("click", function() {
+     cardshow.innerHTML = "";
+    let elementClicked = elem.getAttribute('elem');
+                        
+    for (const character in allcharacters) {
+     if (allcharacters.hasOwnProperty(character)) {
+  if (allcharacters[character][1] === elementClicked) {
+    let characterName = allcharacters[character][0];
+    let rarity=allcharacters[character][3];
+     let characterImageSrc = `char/${character}/main.png`;
+     let backgroundImageURL = `url(bg/${elementClicked}bg.jpg)`;
+     charinfocont.style.display="none"
+     mainbg.style.backgroundImage = backgroundImageURL;
+     cardshow.style.display="flex"
+            cardshow.innerHTML += `<div class="card ${character} ${rarity}">
+            <div class="bg">
+             <img src="${characterImageSrc}" alt="${characterName}">
+            <span class="text">${characterName}</span>
+            <div class="bottom"></div>
+            </div>
+            </div>`;
+             }
+            }
+            }
+        Hover(); 
+    });
+ });
+                
     
 
-  
-let elements = ["pyro", "cryo", "hydro", "dendro", "geo", "anemo", "electro"];
-let characters = {
-    pyro: {name:["bennet", "yoimiya", "xiangling"],
-            weapon:["sword","bow","polearm"],
-        rarity:["4star","5star","4star"]},
 
-    cryo: {name:["shenhe", "ganyu", "ayaka"],
-            weapon:["sword","bow","polearm"]},
-    hydro: {name:["neuvillette", "childe", "furina"],
-            weapon:["sword","bow","polearm"]},
-    anemo:{name:["venti", "xiao", "kazuha"],
-            weapon:["sword","bow","polearm"]},
-    electro: {name:["raiden shogun" ,"venti" ,"yelan" ,"yoimiya","xiangling","shenhe","furina","childe","kokomi" ,"tighnari","xiao","ganyu","arataki itto","alhaitham",],
-            weapon:["sword","bow","polearm"]},
-    dendro: {name:["nahida", "baizhu", "alhaitam" , "tighnari"],
-            weapon:["sword","bow","polearm"]},
-    geo: {name:["arataki itto", "zhongli"],
-            weapon:["sword","bow","polearm"]},
-};
-
-let cardshow = document.querySelector(".cardshowcase");
-let elementsbtn = document.querySelectorAll(".elem");
-elementsbtn.forEach(function(elem) {
-    elem.addEventListener("click", function() {
-        
-        
-        cardshow.innerHTML = "";
-        let elementClicked = elem.getAttribute('elem');
-        if (characters.hasOwnProperty(elementClicked)) {
-            characters[elementClicked].name.forEach(character => {
-                let characterImageSrc = `char/${character}.png`;
-                console.log(character);
-                
-                cardshow.innerHTML += `<div class="card ${character}">
-                    <div class="bg">
-                        <img src="${characterImageSrc}" alt="${character}">
-                        <span class="text">${character}</span>
-                        <div class="bottom"></div>
-                    </div>
-                </div>`;
-                Hover()
-                
-            });
-        }
-        
-    });
-});
-Hover()
-
-let elements2=document.querySelectorAll(".celem")
-elements2.forEach(function(celem){
-    celem.addEventListener("click",function(){
-        window.location.href = "index.html";
-    })
-})
-function handleCardClick() {
-    const card = document.querySelector('.click');
-    card.classList.add('clicked'); // Add a class to the card to trigger the transition
-}
-             
-            
                    
               
     
