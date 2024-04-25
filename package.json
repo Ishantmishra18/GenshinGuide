@@ -1,9 +1,1 @@
-{
-  "name": "ponatix",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "start": "your-start-script",
-    "build": "your-build-script"
-  }
-}
+
