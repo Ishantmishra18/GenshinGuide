@@ -24,12 +24,18 @@ function Hover(){
                     })
                     cardo.addEventListener("click",function(){
                         let charr=cardo.classList[1]
-                        console.log(charr)
                         cardshow.style.display="none"
                         charinfocont.style.display="block"
-                        charinfocont.innerHTML=`<div class="photo">
-                        <img class="mainimg" src="char/${charr}/main.png" alt="">
+                        if (window.innerWidth < 768) {
+                            charinfocont.innerHTML=`<div class="photo">
+                        <img class="mainimg" src="char/${charr}/phonemain.png" alt="">
                         </div>`
+                        } else {
+                            charinfocont.innerHTML=`<div class="photo">
+                            <img class="mainimg" src="char/${charr}/main.png" alt="">
+                            </div>`
+                        }
+                        
                     }
                 )
                 })}   

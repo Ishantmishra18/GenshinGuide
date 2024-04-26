@@ -167,7 +167,7 @@ nav .right .reaction{
     width: 90vw;
     position: absolute;
     top:15vh;
-    margin:auto; 
+    margin-left: 6vw; 
     display:flex;
     flex-wrap: wrap;
     justify-content:center;
@@ -266,8 +266,8 @@ nav .right .reaction{
 
 .charinfocont{
 height:auto;
-width:100vw;
-
+width:100%;
+overflow-x: hidden;
 }
 
 .photo{
@@ -276,20 +276,17 @@ width:100vw;
     position: absolute;
     z-index: -3;
     top:0;
-    right:-20vw;
+    left:20vw;
     animation: 0.6s slideAndEnlarge ease-in-out forwards;
-
-
 }
-
 @keyframes slideAndEnlarge {
     0% {
         opacity: 0;
-        transform: translateX(-200px) scale(0.3);
+        transform: translateX(200px);
     }
     100% {
         opacity: 1;
-        transform: translateX(0px) scale(1);
+        transform: translateX(0px);
     }
 }
 
@@ -329,15 +326,50 @@ width:100vw;
     border-radius: 100vw;
     border:3px solid gray
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1100px) {
     nav {
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        height:5vh;
         box-sizing: border-box;
+}
+
+.element{
+    height:40px;
+    width: 50vw;
+    left:25vw;
+    transform: rotate(0deg);
+    top:4vh;
+    
+}
+.element .elem{
+    transform: rotate(0deg);
+}
+
+.cardshowcase{
+    margin:auto;
+    align-items: start;
+    justify-content: center;
+    top:10vh;
+}
+.photo{
+    left:0vw;
+}
+.mainbg{
+    background-size: 200vw;
+}
+}
+@media only screen and (max-width: 767px) {
+      
+    .element{
+        height:5vh;
+        width: 60vw;
+        left:20vw;
+        top:4vh; 
+    }
+    .element .elem{
+        height:60%;
     }
     .card{
-        height:140px;
+        height:120px;
         margin:0px 7px 0px 7px;
     }
     .bg .text{
@@ -347,28 +379,19 @@ width:100vw;
     .bottom{
         height:15px;
     }
-    .element{
-        height:30px;
-        width: 80%;
-        left:32px;
-        transform: rotate(0deg);
-        top:53px
-    }
-    .element .elem{
-        transform: rotate(0deg);
-    }
+    
+    
     nav .left h1{
         font-size: 27px;
     }
     nav .right{
         display:none
     }
-    .photo{
-        height:50vh;
-        top:20vh;
-    }
+    
     .contbg{
         height:70vh
     }
-       
+    .mainbg{
+        background-size: 185vh;
+    }   
 }
